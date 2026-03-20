@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Nusantara PRO</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+<div class="sidebar">
+    <h2>HOTEL</h2>
+    <a onclick="showSection('dashboard')">Dashboard</a>
+    <a onclick="showSection('rooms')">Rooms</a>
+    <a onclick="showSection('booking')">Booking</a>
+    <a onclick="showSection('data')">Data</a>
+</div>
+
+<div class="main">
+
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+        <div class="kpi">
+            <div class="kpi-box">Terisi: <span id="occ-count">0</span></div>
+            <div class="kpi-box">Rp <span id="total-rev">0</span></div>
+        </div>
+    </section>
+
+    <section id="rooms" style="display:none">
+        <h2>Status Kamar</h2>
+        <div id="room-container" class="room-grid"></div>
+    </section>
+
+    <section id="booking" style="display:none">
+        <h2>Booking</h2>
+        <div class="form-group">
+            <input id="guest" placeholder="Nama Tamu">
+            <select id="room"></select>
+            <input type="number" id="night" placeholder="Malam">
+            <button onclick="booking()">Check In</button>
+        </div>
+    </section>
+
+    <section id="data" style="display:none">
+        <h2>Data Booking</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Kamar</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="table"></tbody>
+        </table>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
